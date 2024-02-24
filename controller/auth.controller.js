@@ -1,4 +1,4 @@
-const { createError } = require('../error')
+const { createError } = require('../utils/error')
 const {User} = require('../model')
 const jwt = require('jsonwebtoken')
 

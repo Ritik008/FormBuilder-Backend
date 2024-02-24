@@ -1,7 +1,7 @@
 const { User, Form, FormSubmission } = require("../model")
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const { createError } = require("../error")
+const { createError } = require("../utils/error")
 
 const login = async (req, res, next) => {
     try {

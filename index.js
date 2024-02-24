@@ -2,7 +2,7 @@ require('dotenv').config()
 const connection = require('./db/connection')
 const express = require('express')
 const routes = require('./routes')
-const { createError } = require('./error')
+const { createError } = require('./utils/error')
 const morgan = require('morgan')
 
 const app = express()
