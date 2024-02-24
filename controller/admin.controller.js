@@ -1,4 +1,4 @@
-const { User, Form } = require("../model")
+const { User, Form, FormSubmission } = require("../model")
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const { createError } = require("../error")
@@ -42,7 +42,18 @@ const allForms = async (req, res, next) => {
     }
 }
 
+const getSubmissions = async (req, res, next) => {
+    try {   
+        const formId = req.params.formId
+        const form = await FormSubmission.find({formId})
+        res.status(200).json(form)
+    }catch(err) {
+        next(err)
+    }
+}
+
 module.exports = {
     login,
-    allForms
+    allForms,
+    getSubmissions
 }
