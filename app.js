@@ -10,7 +10,7 @@ const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(cors({
-  origin: ['http://localhost:3000'],
+  origin: ['http://localhost:3000','http://ec2-52-66-253-190.ap-south-1.compute.amazonaws.com:8000'],
 }))
 app.use('/api', routes)
 
