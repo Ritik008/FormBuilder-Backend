@@ -10,7 +10,7 @@ const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(cors({
-  origin: ['http://localhost:3000','http://ec2-52-66-253-190.ap-south-1.compute.amazonaws.com:8000'],
+  origin: ['http://localhost:3000','https://form-builder-frontend-one.vercel.app'],
 }))
 app.use('/api', routes)
 
