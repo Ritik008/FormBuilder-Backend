@@ -4,10 +4,14 @@ const express = require('express')
 const routes = require('./routes')
 const { createError } = require('./utils/error')
 const morgan = require('morgan')
+const cors = require('cors')
 
 const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
+app.use(cors({
+  origin: ['http://localhost:3000'],
+}))
 app.use('/api', routes)
 
 
