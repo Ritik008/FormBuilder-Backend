@@ -30,7 +30,7 @@ app.use((req, res, next) => {
   });
   
 
-const port = 8000 || process.env.PORT
+const port = 80 || process.env.PORT
 
 app.listen(port, () => {
     connection()
