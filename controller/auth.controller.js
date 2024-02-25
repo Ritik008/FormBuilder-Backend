@@ -25,6 +25,10 @@ const login = async (req, res, next) => {
       return next(createError(400, "Email or password is required"));
     }
     const user = await User.findOne({email})
+    if(user.role !== 'user') {
+      return next(createError(400, 'User not found'))
+    }
+    
     if(!user) {
       return next(createError(404, 'User email does not exists'))
     }
