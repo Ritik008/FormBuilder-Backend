@@ -9,9 +9,7 @@ const cors = require('cors')
 const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
-app.use(cors({
-  origin: ['http://localhost:3000','https://form-builder-frontend-one.vercel.app'],
-}))
+app.use(cors())
 app.use('/api', routes)
 
 
